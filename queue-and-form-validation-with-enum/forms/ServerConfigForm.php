@@ -5,7 +5,7 @@ namespace app\forms;
 /**
  * @author Eugene Tolubaria <m203a4@gmail.com>
  */
-class ServerConfigForm
+class ServerConfigForm implements FormInterface
 {
     /**
      * @var array
@@ -21,7 +21,7 @@ class ServerConfigForm
     }
 
     /**
-     * @return bool
+     * @inheritDoc
      */
     public function validate(): bool
     {
