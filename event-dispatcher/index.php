@@ -9,8 +9,8 @@ $userEventListener = new UserEventListener();
 $eventDispatcher->bind('user.register.before', [$userEventListener, 'beforeUserRegister']);
 $eventDispatcher->bind('user.register.after', [$userEventListener, 'afterUserRegister']);
 $eventDispatcher->bind('user.register.before', function () {
-    echo 'Before register: it will also called!', PHP_EOL;
+    echo 'Before register: it will also be called!', PHP_EOL;
 });
 
 // Some logic
-$userManager->register('Eugene Tolubaria', 'Q59Az1hf');
+$userManager->register('Eugene Tolubaria', 'qwerty');
