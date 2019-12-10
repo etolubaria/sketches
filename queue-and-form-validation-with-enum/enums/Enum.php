@@ -3,11 +3,7 @@
 namespace app\enums;
 
 /**
- * The base class of the enumerated types.
- *
- * An enumerated type is a data type consisting of a set of named values.
- * The enumerator names are identifiers that behave like constants.
- * Classes inheritors must contain a set of constants having a common context.
+ * The base class of the enumerated types
  *
  * @author Eugene Tolubaria <m203a4@gmail.com>
  */
