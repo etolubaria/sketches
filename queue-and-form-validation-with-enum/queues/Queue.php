@@ -5,7 +5,7 @@ namespace app\queues;
 /**
  * @author Eugene Tolubaria <m203a4@gmail.com>
  */
-class Queue
+class Queue implements QueueInterface
 {
     /**
      * @var array
