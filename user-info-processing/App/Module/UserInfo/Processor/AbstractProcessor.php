@@ -43,6 +43,8 @@ abstract class AbstractProcessor implements ProcessorInterface
     /**
      * @param string $userInfo
      * 
+     * @throws \RuntimeException
+     *
      * @return string Response status
      */
     abstract protected function getStatusFromResponse(string $response): string;
