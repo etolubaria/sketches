@@ -6,13 +6,14 @@ use App\Module\UserInfo\Enum\FormatType;
 use App\Module\UserInfo\Processor\JsonProcessor;
 use App\Module\UserInfo\Processor\ProcessorInterface;
 use App\Module\UserInfo\Processor\XmlProcessor;
+use Contract\Command\CommandInterface;
 
 /**
  * Assumes console execution
  *
  * @author Eugene Tolubaria <m203a4@gmail.com>
  */
-class ProcessingCommand
+class ProcessingCommand implements CommandInterface
 {
     /**
      * @param string $formatType
@@ -34,7 +35,7 @@ class ProcessingCommand
     }
 
     /**
-     * Entry point of the current command.
+     * @inheritDoc
      */
     public function execute(): void
     {
