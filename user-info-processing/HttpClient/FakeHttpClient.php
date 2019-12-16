@@ -2,7 +2,12 @@
 
 namespace HttpClient;
 
-class HttpClient
+use Contract\HttpClient\HttpClientInterface;
+
+/**
+ * @author Eugene Tolubaria <m203a4@gmail.com>
+ */
+class FakeHttpClient implements HttpClientInterface
 {
     /**
      * @param string $method Http method
