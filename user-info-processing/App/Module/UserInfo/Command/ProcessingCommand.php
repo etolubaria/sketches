@@ -47,7 +47,7 @@ class ProcessingCommand implements CommandInterface
             $status = $processor->process($userInfo);
 
             echo $status;
-        } catch (Throwable $e) {
+        } catch (\Throwable $e) {
             echo $e->getMessage();
         }
     }
