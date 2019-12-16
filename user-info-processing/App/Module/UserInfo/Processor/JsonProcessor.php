@@ -19,6 +19,8 @@ namespace App\Module\UserInfo\Processor;
 class JsonProcessor extends AbstractProcessor
 {
     /**
+     * Using to map 'SubmitDataResult' from response to transaction status
+     *
      * @var array
      */
     private $submitDataResultMap = [
