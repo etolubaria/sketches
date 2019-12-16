@@ -23,6 +23,8 @@ interface ProcessorInterface
     /**
      * @param array $userInfo
      * 
+     * @throws \RuntimeException
+     *
      * @return string Response status
      */
     public function process(array $userInfo): string;
