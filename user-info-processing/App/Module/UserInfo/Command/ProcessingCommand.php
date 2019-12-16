@@ -14,9 +14,7 @@
 namespace App\Module\UserInfo\Command;
 
 use App\Module\UserInfo\Enum\FormatType;
-use App\Module\UserInfo\Processor\JsonProcessor;
-use App\Module\UserInfo\Processor\ProcessorInterface;
-use App\Module\UserInfo\Processor\XmlProcessor;
+use App\Module\UserInfo\Processor\ProcessorFactory;
 use Contract\Command\CommandInterface;
 
 /**
@@ -27,31 +25,12 @@ use Contract\Command\CommandInterface;
 class ProcessingCommand implements CommandInterface
 {
     /**
-     * @param string $formatType
-     * 
-     * @return ProcessorInterface
-     * 
-     * @throws RuntimeException
-     */
-    private function getProcessor(string $formatType): ProcessorInterface
-    {
-        switch ($formatType) {
-            case FormatType::XML:
-                return new XmlProcessor();
-            case FormatType::JSON:
-                return new JsonProcessor();
-            default:
-                throw new \RuntimeException('Unexpected format');
-        }
-    }
-
-    /**
      * @inheritDoc
      */
     public function execute(): void
     {
-        // test data
-        $formatType = FormatType::JSON;
+        // input data
+        $format = FormatType::JSON;
         $request = [
             'firstName'     => 'Vasya',
             'lastName'      => 'Pupkin',
@@ -60,8 +39,11 @@ class ProcessingCommand implements CommandInterface
             'creditScore'   => 'good',
         ];
 
+        // processing
         try {
-            $processor = $this->getProcessor($formatType);
+            $processorFactory = new ProcessorFactory();
+            $processor = $processorFactory->createFromFormat($format);
+
             $status = $processor->process($userInfo);
 
             echo $status;
