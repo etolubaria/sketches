@@ -75,13 +75,13 @@ class XmlProcessor extends AbstractProcessor
         $xml = new SimpleXMLElement($response);
 
         if (!isset($xml->returnCodeDescription)) {
-            throw new RuntimeException('returnCodeDescription does not exist');
+            throw new \RuntimeException('returnCodeDescription does not exist');
         }
 
         $returnCodeDescription = (string) $xml->returnCodeDescription;
 
         if (!array_key_exists($returnCodeDescription, $this->returnCodeDescriptionMap)) {
-            throw new RuntimeException('Recieved unexpected returnCodeDescription');
+            throw new \RuntimeException('Recieved unexpected returnCodeDescription');
         }
 
         $status = $this->returnCodeDescriptionMap[$returnCodeDescription];
