@@ -19,6 +19,8 @@ namespace App\Module\UserInfo\Processor;
 class XmlProcessor extends AbstractProcessor
 {
     /**
+     * Using to map 'creditScore' from the input with the required for request
+     *
      * @var array
      */
     private $creditScoreMap = [
@@ -27,6 +29,8 @@ class XmlProcessor extends AbstractProcessor
     ];
 
     /**
+     * Using to map 'returnCodeDescription' from response to transaction status
+     *
      * @var array
      */
     private $returnCodeDescriptionMap = [
