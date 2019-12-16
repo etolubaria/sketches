@@ -15,7 +15,7 @@ namespace App\Module\UserInfo\Command;
 
 use App\Module\UserInfo\Enum\FormatType;
 use App\Module\UserInfo\Processor\ProcessorFactory;
-use Contract\Command\CommandInterface;
+use Contract\Console\CommandInterface;
 
 /**
  * Assumes console execution
