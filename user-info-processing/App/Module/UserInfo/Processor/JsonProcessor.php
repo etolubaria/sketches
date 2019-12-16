@@ -43,13 +43,13 @@ class JsonProcessor extends AbstractProcessor
         $json = json_decode($response, true, 512, JSON_THROW_ON_ERROR);
 
         if (!array_key_exists('SubmitDataResult', $json)) {
-            throw new RuntimeException('SubmitDataResult does not exist');
+            throw new \RuntimeException('SubmitDataResult does not exist');
         }
 
         $submitDataResult = $json['SubmitDataResult'];
 
         if (!array_key_exists($submitDataResult, $this->submitDataResultMap)) {
-            throw new RuntimeException('Recieved unexpected submitDataResult');
+            throw new \RuntimeException('Recieved unexpected submitDataResult');
         }
 
         $status = $this->submitDataResultMap[$submitDataResult];
