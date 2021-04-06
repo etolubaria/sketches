@@ -9,6 +9,7 @@
     "autoload": {
         "psr-4": {
             "AccessControlExample\\": "access-control/src/",
+            "DateTimeExample\\": "datetime/src/",
             "EventDispatcherExample\\": "event-dispatcher/src/",
             "EventDispatcherPsr14Example\\": "event-dispatcher-implementation-using-psr-14/src/",
             "PasswordGeneratorExample\\": "password-generator/src/"
