@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Controller;
+declare(strict_types=1);
 
-use App\Component\Security\AccessControlInterface;
-use App\Component\Http\RequestInterface;
+namespace AccessControlExample\Controller;
 
-class ApiController
+use AccessControlExample\Component\Security\AccessControlInterface;
+use AccessControlExample\Component\Http\RequestInterface;
+
+class SomeApiController
 {
     private AccessControlInterface $accessControl;
 
@@ -14,7 +16,7 @@ class ApiController
         $this->accessControl = $accessControl;
     }
 
-    public function actionIndex(RequestInterface $request)
+    public function actionIndex(RequestInterface $request): string
     {
         if (!$this->accessControl->isGranted($request)) {
             return 'Access denied';

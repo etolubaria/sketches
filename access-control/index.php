@@ -1,11 +1,13 @@
 <?php
 
-use App\Component\Http\Request;
-use App\Component\Security\TokenBasedAccessControl;
-use App\Controller\ApiController;
+require __DIR__ . '/../vendor/autoload.php';
+
+use AccessControlExample\Component\Http\Request;
+use AccessControlExample\Component\Security\TokenBasedAccessControl;
+use AccessControlExample\Controller\SomeApiController;
 
 $request = new Request();
 $accessControl = new TokenBasedAccessControl();
-$controller = new ApiController($accessControl);
+$controller = new SomeApiController($accessControl);
 
-echo $controller->actionIndex($request);
+echo $controller->actionIndex($request), PHP_EOL;

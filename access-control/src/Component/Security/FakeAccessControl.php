@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Component\Security;
+declare(strict_types=1);
 
-use App\Component\Http\RequestInterface;
+namespace AccessControlExample\Component\Security;
+
+use AccessControlExample\Component\Http\RequestInterface;
 
 class FakeAccessControl implements AccessControlInterface
 {
