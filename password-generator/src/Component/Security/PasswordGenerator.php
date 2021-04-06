@@ -2,7 +2,14 @@
 
 declare(strict_types=1);
 
-class PasswordGenerator
+namespace PasswordGeneratorExample\Component\Security;
+
+/**
+ * Class PasswordGenerator
+ *
+ * @author Eugene Tolubaria <m203a4@gmail.com>
+ */
+final class PasswordGenerator
 {
     /**
      * Minimum and maximum password length
