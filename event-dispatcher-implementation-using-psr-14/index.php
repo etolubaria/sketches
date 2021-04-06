@@ -1,21 +1,29 @@
 <?php
 
-use App\EventDispatcher\Event;
-use App\EventDispatcher\EventDispatcher;
-use App\EventDispatcher\ListenerProvider;
+require __DIR__ . '/../vendor/autoload.php';
+
+use EventDispatcherPsr14Example\Component\EventDispatcher\Event;
+use EventDispatcherPsr14Example\Component\EventDispatcher\EventDispatcher;
+use EventDispatcherPsr14Example\Component\EventDispatcher\ListenerProvider;
+use EventDispatcherPsr14Example\Component\EventDispatcher\NamedEventInterface;
 
 // objects creation and dependencies resolve
 $listenerProvider = new ListenerProvider();
 $eventDispatcher = new EventDispatcher($listenerProvider);
+
+// events and listeners
 $event = new class extends Event {
-    public function getName() { return 'My event'; }
+    public function getName(): string
+    {
+        return 'My event';
+    }
 };
-$listener = function (object $e) {
-    echo $e->getName() . ': I was called as event listener';
+$listener = static function (NamedEventInterface $event) {
+    echo $event->getName() . ' has just happened and was handled by the event listener', PHP_EOL;
 };
 
-// using the event dispatcher and the listener provider
-$listenerProvider->addListener($listener, $event);
-// $listenerProvider->removeListener($listener, $event);
-// $event->stopPropagation();
+// example of using the PSR-14 event dispatcher and listener provider
+$listenerProvider->addListener($listener, $event->getName());
+//$event->stopPropagation();
+//$listenerProvider->removeListener($listener, $event->getName());
 $eventDispatcher->dispatch($event);

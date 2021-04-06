@@ -3,12 +3,14 @@
     "description": "Personal sketches of code or ideas",
     "type": "project",
     "require": {
-        "php": "^7.4"
+        "php": "^7.4",
+        "psr/event-dispatcher": "^1.0"
     },
     "autoload": {
         "psr-4": {
             "AccessControlExample\\": "access-control/src/",
-            "PasswordGeneratorExample\\": "password-generator/src/"
+            "PasswordGeneratorExample\\": "password-generator/src/",
+            "EventDispatcherPsr14Example\\": "event-dispatcher-implementation-using-psr-14/src/"
         }
     },
     "authors": [

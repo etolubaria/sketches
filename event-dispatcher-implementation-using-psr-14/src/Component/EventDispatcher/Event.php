@@ -1,28 +1,23 @@
 <?php
 
-namespace App\EventDispatcher;
+declare(strict_types=1);
+
+namespace EventDispatcherPsr14Example\Component\EventDispatcher;
 
 /**
+ * Class Event
+ *
  * @author Eugene Tolubaria <m203a4@gmail.com>
  */
-abstract class Event implements StoppableEventInterface
+abstract class Event implements StoppableEventInterface, NamedEventInterface
 {
-    /**
-     * @var bool
-     */
-    private $propagationStopped = false;
+    private bool $propagationStopped = false;
 
-    /**
-     * @inheritDoc
-     */
     public function stopPropagation(): void
     {
         $this->propagationStopped = true;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function isPropagationStopped(): bool
     {
         return $this->propagationStopped;
