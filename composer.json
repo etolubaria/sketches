@@ -1,0 +1,15 @@
+{
+    "name": "etolubaria/sketches",
+    "description": "Personal sketches of code or ideas",
+    "type": "project",
+    "require": {
+        "php": "^7.4"
+    },
+    "authors": [
+        {
+            "name": "etolubaria",
+            "email": "m203a4@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
