@@ -1,26 +1,23 @@
 <?php
 
+declare(strict_types=1);
+
+namespace EventDispatcherExample\Domain\Event;
+
 /**
+ * Class BeforeUserRegisterEvent
+ *
  * @author Eugene Tolubaria <m203a4@gmail.com>
  */
-class BeforeUserRegisterEvent
+final class BeforeUserRegisterEvent
 {
-    /**
-     * @var string
-     */
-    private $login;
+    private string $login;
 
-    /**
-     * @param string $login
-     */
     public function __construct(string $login)
     {
         $this->login = $login;
     }
 
-    /**
-     * @return string
-     */
     public function getLogin(): string
     {
         return $this->login;

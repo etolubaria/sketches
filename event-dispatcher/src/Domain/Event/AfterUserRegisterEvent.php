@@ -1,26 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
+namespace EventDispatcherExample\Domain\Event;
+
+use EventDispatcherExample\Domain\Entity\User;
+
 /**
+ * Class AfterUserRegisterEvent
+ *
  * @author Eugene Tolubaria <m203a4@gmail.com>
  */
-class AfterUserRegisterEvent
+final class AfterUserRegisterEvent
 {
-    /**
-     * @var User
-     */
-    private $user;
+    private User $user;
 
-    /**
-     * @param User $user
-     */
     public function __construct(User $user)
     {
         $this->user = $user;
     }
 
-    /**
-     * @return User
-     */
     public function getUser(): User
     {
         return $this->user;

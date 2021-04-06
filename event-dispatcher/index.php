@@ -1,16 +1,24 @@
 <?php
 
+require __DIR__ . '/../vendor/autoload.php';
+
+use EventDispatcherExample\Component\EventDispatcher\EventDispatcher;
+use EventDispatcherExample\Domain\Listener\UserEventListener;
+use EventDispatcherExample\Domain\Repository\UserRepository;
+use EventDispatcherExample\Domain\Service\UserRegistrar;
+
 // Creating objects and resolving dependencies
 $eventDispatcher = new EventDispatcher();
-$userManager = new UserManager($eventDispatcher);
+$userRepository = new UserRepository();
+$userRegistrar = new UserRegistrar($eventDispatcher, $userRepository);
 $userEventListener = new UserEventListener();
 
 // Listeners registration
 $eventDispatcher->bind('user.register.before', [$userEventListener, 'beforeUserRegister']);
 $eventDispatcher->bind('user.register.after', [$userEventListener, 'afterUserRegister']);
-$eventDispatcher->bind('user.register.before', function () {
-    echo 'Before register: it will also be called!', PHP_EOL;
+$eventDispatcher->bind('user.register.before', static function () {
+    echo 'Before register: It will also be called to perform some actions', PHP_EOL;
 });
 
 // Some logic
-$userManager->register('Eugene Tolubaria', 'qwerty');
+$userRegistrar->register('Eugene Tolubaria', 'super_secure_password');

@@ -1,55 +1,41 @@
 <?php
 
+declare(strict_types=1);
+
+namespace EventDispatcherExample\Domain\Entity;
+
 /**
+ * Class User
+ *
  * @author Eugene Tolubaria <m203a4@gmail.com>
  */
 class User
 {
-    /**
-     * @var int
-     */
-    private $id;
+    private ?int $id;
+    private string $login;
+    private string $password;
 
-    /**
-     * @var string
-     */
-    private $login;
-
-    /**
-     * @var string
-     */
-    private $password;
-
-    /**
-     * @param string $login
-     * @param string $password
-     */
     public function __construct(string $login, string $password)
     {
-        $this->id = rand(1, 9);
+        try {
+            $this->id = random_int(1, 9);
+        } catch (\Exception $e) {
+            $this->id = null;
+        }
         $this->login = $login;
         $this->password = $password;
     }
 
-    /**
-     * @return int
-     */
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function getLogin(): string
     {
         return $this->login;
     }
 
-    /**
-     * @return string
-     */
     public function getPassword(): string
     {
         return $this->password;

@@ -1,5 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
+namespace EventDispatcherExample\Component\EventDispatcher;
+
 /**
  * Manages listeners and dispatches events
  *
