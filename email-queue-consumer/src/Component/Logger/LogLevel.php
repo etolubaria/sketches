@@ -1,6 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
+namespace EmailQueueConsumerExample\Component\Logger;
+
 /**
+ * Interface LogLevel
+ *
  * @author Eugene Tolubaria <m203a4@gmail.com>
  */
 final class LogLevel

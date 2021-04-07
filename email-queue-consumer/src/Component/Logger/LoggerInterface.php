@@ -1,6 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
+namespace EmailQueueConsumerExample\Component\Logger;
+
 /**
+ * Interface LoggerInterface
+ *
  * @author Eugene Tolubaria <m203a4@gmail.com>
  */
 interface LoggerInterface

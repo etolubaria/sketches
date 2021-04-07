@@ -1,6 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
+namespace EmailQueueConsumerExample\Component\MessageQueue;
+
 /**
+ * Interface QueueInterface
+ *
  * @author Eugene Tolubaria <m203a4@gmail.com>
  */
 interface QueueInterface

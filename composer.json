@@ -10,6 +10,7 @@
         "psr-4": {
             "AccessControlExample\\": "access-control/src/",
             "DateTimeExample\\": "datetime/src/",
+            "EmailQueueConsumerExample\\": "email-queue-consumer/src/",
             "EventDispatcherExample\\": "event-dispatcher/src/",
             "EventDispatcherPsr14Example\\": "event-dispatcher-implementation-using-psr-14/src/",
             "PasswordGeneratorExample\\": "password-generator/src/"
