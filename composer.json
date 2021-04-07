@@ -13,7 +13,8 @@
             "EmailQueueConsumerExample\\": "email-queue-consumer/src/",
             "EventDispatcherExample\\": "event-dispatcher/src/",
             "EventDispatcherPsr14Example\\": "event-dispatcher-implementation-using-psr-14/src/",
-            "PasswordGeneratorExample\\": "password-generator/src/"
+            "PasswordGeneratorExample\\": "password-generator/src/",
+            "ValueObjectExample\\": "value-objects/src/"
         }
     },
     "authors": [

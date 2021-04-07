@@ -1,5 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
+namespace ValueObjectExample;
+
 /**
  * Email address value object
  *
@@ -10,12 +14,12 @@ class EmailAddress
     /**
      * @var string
      */
-    private $email;
+    private string $email;
 
     /**
      * @var string|null
      */
-    private $name;
+    private ?string $name;
 
     /**
      * @param string $email
