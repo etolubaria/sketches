@@ -14,6 +14,7 @@
             "EventDispatcherExample\\": "event-dispatcher/src/",
             "EventDispatcherPsr14Example\\": "event-dispatcher-implementation-using-psr-14/src/",
             "PasswordGeneratorExample\\": "password-generator/src/",
+            "UrlHelperExample\\": "url-helper/src/",
             "ValueObjectExample\\": "value-objects/src/"
         }
     },
